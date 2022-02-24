@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="content-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1><strong>Dashboard Surat ATI Dewantara Palopo</strong></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="content-fluid">
+            
+            <div class="row ml-auto">
+                <div class="col-lg col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3>{{surat}}</h3>
+
+                            <h4>Surat Keluar</h4>
+                        </div>
+                        <div class="icon">
+                            <i class="bi bi-envelope-check-fill"></i><br>
+                        </div>
+                        <a href="/surat-keluar/" class="small-box-footer">Klik di sini <i
+                                class="bi bi-arrow-right-circle-fill"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>0</h3>
+
+                            <h4>Surat Masuk</h4>
+                        </div>
+                        <div class="icon">
+                            <i class="bi bi-envelope-open-fill"></i><br>
+                        </div>
+                        <a href="/surat-masuk/" class="small-box-footer">Klik di sini <i
+                                class="bi bi-arrow-right-circle-fill"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>{{format}}</h3>
+
+                            <h4>Format Surat</h4>
+                        </div>
+                        <div class="icon">
+                            <i class="bi bi-file-text-fill"></i><br>
+                        </div>
+                        <a href="/format-surat/" class="small-box-footer">Klik di sini <i
+                                class="bi bi-arrow-right-circle-fill"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

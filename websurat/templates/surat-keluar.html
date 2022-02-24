@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="content-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-12">
+                    <h1><strong>Surat Keluar Akademi Teknologi Industri Dewantara Palopo</strong></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content">
+        <div class="content-fluid">
+
+            <a href="{% url 'masuk' %}" class="btn btn-info float-right mb-3" role="button"> Masuk
+                <i class="bi bi-box-arrow-in-right"></i>
+            </a>
+
+            <a href="{% url 'export_surat_keluar_xls' %}" class="btn btn-success  mb-3 mr-2">Export ke Excel
+                <i class="bi bi-file-earmark-spreadsheet"></i>
+            </a>
+
+            <table class="table table-striped" id="datatable">
+                <thead>
+                    <tr class="table-danger">
+                        <th scope="col">#</th>
+                        <th scope="col" style="width: 7%;">Tgl Surat</th>
+                        <th scope="col">Nomor Surat</th>
+                        <th scope="col">Jenis Surat</th>
+                        <th scope="col">Tujuan</th>
+                        <th scope="col">Perihal</th>
+                        <th scope="col">Mengetahui</th>
+                        <th scope="col">Arsip</th>
+                        <th scope="col">Ket</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for srt in surat %}
+                    <tr class="table-info">
+                        <th scope="row">{{srt.id}}</th>
+                        <td>{{srt.tgl_surat}}</td>
+                        <td>{{srt.nomor_surat}}{{srt.kode_surat}}</td>
+                        <td>{{srt.jenis_surat}}</td>
+                        <td>{{srt.tujuan}}</td>
+                        <td>{{srt.perihal}}</td>
+                        <td>{{srt.mengetahui}}</td>
+                        <td>{{srt.arsip}}</td>
+                        <td>{{srt.ket}}</td>
+                        
+                    </tr>
+
+                    {%endfor%}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
