@@ -8,7 +8,15 @@ class Surat(models.Model):
         ('/WD/ATIDP/'+bulan+'/'+str(waktu.year), 'Wakil Direktur'),
         ('/TMS/ATIDP/'+bulan+'/'+str(waktu.year), 'Mesin Otomotif'),
         ('/TSP/ATIDP/'+bulan+'/'+str(waktu.year), 'Teknik Sipil'),
-        ('/W', 'Elektronika?'),
+        ('/ELK/ATIDP/'+bulan+'/'+str(waktu.year), 'Teknik Elektronika'),
+        ('/AKD/ATIDP/'+bulan+'/'+str(waktu.year), 'Akademik'),
+        ('/KMS/ATIDP/'+bulan+'/'+str(waktu.year), 'Kemahasiswaan'),
+        ('/LPM/ATIDP/'+bulan+'/'+str(waktu.year), 'LPM'),
+        ('/LPPM/ATIDP/'+bulan+'/'+str(waktu.year), 'LPPM'),
+        ('/SR.PR/ATIDP/'+bulan+'/'+str(waktu.year), 'Sarana Prasarana'),
+        ('/KJS/ATIDP/'+bulan+'/'+str(waktu.year), 'Kerja Sama'),
+        ('/SDM/ATIDP/'+bulan+'/'+str(waktu.year), 'Sumber Daya Manusia'),
+        ('/ADM/ATIDP/'+bulan+'/'+str(waktu.year), 'Administrasi Umum'),
     )
  
     #nomor surat: 31/D/ATIDP/II/2022
