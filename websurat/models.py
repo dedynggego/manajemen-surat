@@ -17,6 +17,7 @@ class Surat(models.Model):
         ('/KJS/ATIDP/'+bulan+'/'+str(waktu.year), 'Kerja Sama'),
         ('/SDM/ATIDP/'+bulan+'/'+str(waktu.year), 'Sumber Daya Manusia'),
         ('/ADM/ATIDP/'+bulan+'/'+str(waktu.year), 'Administrasi Umum'),
+        ('/PMB/ATIDP/'+bulan+'/'+str(waktu.year), 'PMB'),
     )
  
     #nomor surat: 31/D/ATIDP/II/2022
