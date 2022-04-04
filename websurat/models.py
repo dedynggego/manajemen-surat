@@ -1,30 +1,49 @@
 from django.db import models
 from websurat.waktu import *
 # Create your models here.
+
+
 class Surat(models.Model):
-    
+
     pilihan = (
-        ('/D/ATIDP/'+bulan+'/'+str(waktu.year), 'Direktur'),
-        ('/WD/ATIDP/'+bulan+'/'+str(waktu.year), 'Wakil Direktur'),
-        ('/TMS/ATIDP/'+bulan+'/'+str(waktu.year), 'Mesin Otomotif'),
-        ('/TSP/ATIDP/'+bulan+'/'+str(waktu.year), 'Teknik Sipil'),
-        ('/ELK/ATIDP/'+bulan+'/'+str(waktu.year), 'Teknik Elektronika'),
-        ('/AKD/ATIDP/'+bulan+'/'+str(waktu.year), 'Akademik'),
-        ('/KMS/ATIDP/'+bulan+'/'+str(waktu.year), 'Kemahasiswaan'),
-        ('/LPM/ATIDP/'+bulan+'/'+str(waktu.year), 'LPM'),
-        ('/LPPM/ATIDP/'+bulan+'/'+str(waktu.year), 'LPPM'),
-        ('/SR.PR/ATIDP/'+bulan+'/'+str(waktu.year), 'Sarana Prasarana'),
-        ('/KJS/ATIDP/'+bulan+'/'+str(waktu.year), 'Kerja Sama'),
-        ('/SDM/ATIDP/'+bulan+'/'+str(waktu.year), 'Sumber Daya Manusia'),
-        ('/ADM/ATIDP/'+bulan+'/'+str(waktu.year), 'Administrasi Umum'),
-        ('/PMB/ATIDP/'+bulan+'/'+str(waktu.year), 'PMB'),
+        ('/D/ATIDP/', 'Direktur'),
+        ('/WD/ATIDP/', 'Wakil Direktur'),
+        ('/TMS/ATIDP/', 'Mesin Otomotif'),
+        ('/TSP/ATIDP/', 'Teknik Sipil'),
+        ('/ELK/ATIDP/', 'Teknik Elektronika'),
+        ('/AKD/ATIDP/', 'Akademik'),
+        ('/KMS/ATIDP/', 'Kemahasiswaan'),
+        ('/LPM/ATIDP/', 'LPM'),
+        ('/LPPM/ATIDP/', 'LPPM'),
+        ('/SR.PR/ATIDP/', 'Sarana Prasarana'),
+        ('/KJS/ATIDP/', 'Kerja Sama'),
+        ('/SDM/ATIDP/', 'Sumber Daya Manusia'),
+        ('/ADM/ATIDP/', 'Administrasi Umum'),
+        ('/PMB/ATIDP/', 'PMB'),
     )
- 
-    #nomor surat: 31/D/ATIDP/II/2022
+
+    bulan = (
+        ('I/'+str(waktu.year), 'I'),
+        ('II/'+str(waktu.year), 'II'),
+        ('III/'+str(waktu.year), 'III'),
+        ('IV/'+str(waktu.year), 'IV'),
+        ('V/'+str(waktu.year), 'V'),
+        ('VI/'+str(waktu.year), 'VI'),
+        ('VII/'+str(waktu.year), 'VII'),
+        ('VIII/'+str(waktu.year), 'VIII'),
+        ('IX/'+str(waktu.year), 'IX'),
+        ('X/'+str(waktu.year), 'X'),
+        ('XI/'+str(waktu.year), 'XI'),
+        ('XII/'+str(waktu.year), 'XII'),
+
+    )
+
+    # nomor surat: 31/D/ATIDP/II/2022
 
     tgl_surat = models.CharField(max_length=50, null=True, blank=True)
     nomor_surat = models.CharField(max_length=4, null=True, unique=True)
-    kode_surat = models.CharField(max_length=50,null=True, choices=pilihan)
+    kode_surat = models.CharField(max_length=50, null=True, choices=pilihan)
+    bulan_surat = models.CharField(max_length=50, null=True, choices=bulan)
     jenis_surat = models.CharField(max_length=50, null=True, blank=True)
     tujuan = models.CharField(max_length=50, null=True, blank=True)
     perihal = models.CharField(max_length=200, null=True, blank=True)
@@ -35,17 +54,14 @@ class Surat(models.Model):
     def __str__(self):
         return self.tgl_surat
 
+
 class Files(models.Model):
     filename = models.CharField(max_length=100)
-    pdf = models.FileField(upload_to='static/doc/')
+    pdf = models.FileField(upload_to='doc')
 
     def __str__(self):
         return self.filename
 
     # def delete(self, *args, **kwargs):
     #     self.pdf.delete()
-    #     super().delete(*args, **kwargs) 
-    
-
-
-
+    #     super().delete(*args, **kwargs)

@@ -1,7 +1,10 @@
+from django.conf import settings
 from django.contrib import admin
 from django.urls import path
 from websurat.views import *
 from django.contrib.auth.views import LoginView
+from django.conf.urls.static import static
+from django.conf import settings
 
 
 urlpatterns = [
@@ -17,4 +20,4 @@ urlpatterns = [
     path('keluar/', logoutView, name='keluar'),
     path('cari/', cari, name='cari'),
     path('export-surat-keluar/', export_surat_keluar_xls, name='export_surat_keluar_xls'),
-]
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

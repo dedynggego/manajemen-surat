@@ -65,7 +65,7 @@
                     <tr class="table-info">
                         <th scope="row">{{srt.id}}</th>
                         <td>{{srt.tgl_surat}}</td>
-                        <td>{{srt.nomor_surat}}{{srt.kode_surat}}</td>
+                        <td>{{srt.nomor_surat}}{{srt.kode_surat}}{{srt.bulan_surat}}</td>
                         <td>{{srt.jenis_surat}}</td>
                         <td>{{srt.tujuan}}</td>
                         <td>{{srt.perihal}}</td>
@@ -128,9 +128,14 @@
                                             {{form.nomor_surat}}
                                         </p>
                                     </div>
-                                    <div class="col-md-9">
+                                    <div class="col-md-3">
                                         <p><label>Kode Surat</label>
                                             {{form.kode_surat}}
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p><label>Kode Surat</label>
+                                            {{form.bulan_surat}}
                                         </p>
                                     </div>
                                 </div>

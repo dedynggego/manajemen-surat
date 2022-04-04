@@ -76,8 +76,8 @@ def ubah_surat_keluar(request, id_surat):
     surat = Surat.objects.get(id=id_surat)
     form = FormSuratKeluar(instance=surat)
     
-    if request.POST:
-        form = FormSuratKeluar(request.POST, instance=surat)
+    if request.method == 'POST':
+        form = FormSuratKeluar(request.POST or None, instance=surat)
         form.save()
         form = FormSuratKeluar()
         messages.success(request, "Data berhasil diperbaharui")

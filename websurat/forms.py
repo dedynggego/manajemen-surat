@@ -20,6 +20,7 @@ class FormSuratKeluar(ModelForm):
             'tgl_surat': forms.TextInput({'class':'form-control'}),
             'nomor_surat':forms.TextInput({'class':'form-control','placeholder':'contoh: 21'}),
             'kode_surat':forms.Select({'class':'form-select'}),
+            'bulan_surat':forms.Select({'class':'form-select'}),
             'jenis_surat':forms.TextInput({'class':'form-control'}),
             'tujuan':forms.TextInput({'class':'form-control'}),
             'perihal':forms.TextInput({'class':'form-control'}),
